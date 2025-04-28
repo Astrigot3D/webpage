@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV Mapping Fundamentals | Astrigot 3D</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Astrigot<span>3D</span></div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorials/tutorials-index.html">Tutorials</a></li>
+                    <li><a href="/podcast/podcast-index.html">Podcast</a></li>
+                    <li><a href="/resources/resources-index.html">Resources</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="tutorial-header">
+        <div class="container">
+            <h1>UV Mapping Fundamentals</h1>
+            <div class="tutorial-meta">
+                <div class="meta-item">
+                    <span></span><span></span> Intermediate
+                </div>
+                <div class="meta-item">
+                    15 min read
+                </div>
+                <div class="meta-item">
+                    Published: April 10, 2025
+                </div>
+            </div>
+            <p>Learn how to properly unwrap your 3D models to apply textures effectively</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="tutorial-content">
+            <main class="main-content">
+                <div class="section">
+                    <h2 id="introduction">Introduction</h2>
+                    <p>UV mapping is one of the most crucial skills in 3D modeling, especially for game asset creation. Without proper UV maps, even the best textures will look distorted and unrealistic on your models. This tutorial will walk you through the fundamentals of UV mapping and provide you with practical techniques to create clean, efficient UV layouts.</p>
+
+                    <p>By the end of this guide, you'll understand how UV coordinates work, how to unwrap different types of geometry, and how to optimize your UV layouts for game engines.</p>
+
+                    <div class="note">
+                        <h4>Note</h4>
+                        <p>This tutorial uses Blender 4.0 for demonstrations, but the concepts apply to all 3D software packages including Maya, 3ds Max, and Cinema 4D.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 id="what-are-uvs">What Are UVs?</h2>
+                    <p>UV coordinates are a 2D representation of your 3D model's surface. The letters "U" and "V" represent the axes of this 2D space (similar to how X, Y, and Z represent the axes in 3D space).</p>
+
+                    <img src="/api/placeholder/800/400" alt="UV Coordinate System" class="tutorial-image">
+
+                    <p>When you unwrap a 3D model, you're essentially flattening its surface into a 2D plane. This creates a UV map that tells the software how to apply a 2D texture image onto the 3D model's surface.</p>
+
+                    <h3>Why UVs Matter</h3>
+                    <p>Proper UV mapping is essential because:</p>
+                    <ul>
+                        <li>It prevents texture stretching and distortion</li>
+                        <li>It allows precise texture placement on specific parts of your model</li>
+                        <li>It enables efficient use of texture space for game assets</li>
+                        <li>It's required for advanced texturing techniques like baking</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 id="preparing-your-model">Preparing Your Model</h2>
+                    <p>Before you start UV unwrapping, it's important to prepare your model properly:</p>
+
+                    <div class="steps">
+                        <h3>Pre-Unwrapping Checklist:</h3>
+                        <ol>
+                            <li>Ensure your model's topology is clean and final</li>
+                            <li>Add edge loops where needed for sharp texture transitions</li>
+                            <li>Mark seams along edges where the UV map will be cut</li>
+                            <li>Consider the model's final use and texture resolution requirements</li>
+                        </ol>
+                    </div>
+
+                    <h3>Marking Seams</h3>
+                    <p>Seams tell the unwrapping algorithm where to "cut" your model to flatten it into 2D. Good seam placement is critical for creating efficient UV layouts.</p>
+
+                    <img src="/api/placeholder/800/400" alt="Marking Seams" class="tutorial-image">
+
+                    <p>When marking seams, follow these guidelines:</p>
+                    <ul>
+                        <li>Place seams in areas that won't be highly visible</li>
+                        <li>Follow natural breaks in the geometry</li>
+                        <li>Avoid placing seams across important details</li>
+                        <li>Create continuous seam loops rather than disconnected segments</li>
+                    </ul>
+                </div>
+
+                <div class="podcast-section">
+                    <h3>Listen to Our UV Mapping Episode</h3>
+                    <p>Want to dive deeper into UV mapping techniques? Listen to our podcast episode where we discuss advanced strategies with professional texture artist Sarah Johnson.</p>
+
+                    <div class="podcast-player">
+                        <img src="/api/placeholder/100/100" alt="Podcast Cover" class="podcast-cover">
+                        <div class="podcast-info">
+                            <h4>EP 08: Mastering UV Mapping for Game Assets</h4>
+                            <p>Duration: 35 minutes</p>
+                            <audio controls style="width: 100%; margin-top: 0.5rem;">
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 id="unwrapping-techniques">Unwrapping Techniques</h2>
+                    <p>There are several approaches to unwrapping your models, each with advantages for different types of geometry:</p>
+
+                    <h3>1. Seam-Based Unwrapping</h3>
+                    <p>This is the most common and controllable method. After marking your seams, you can use the Unwrap command to create your UV layout.</p>
+
+                    <img src="/api/placeholder/800/400" alt="Seam-Based Unwrapping" class="tutorial-image">
+
+                    <div class="steps">
+                        <h4>Steps for Seam-Based Unwrapping:</h4>
+                        <ol>
+                            <li>Select your model in Edit Mode</li>
+                            <li>Mark seams along appropriate edges</li>
+                            <li>Select all faces</li>
+                            <li>Execute the Unwrap command</li>
+                            <li>Adjust the resulting UV layout as needed</li>
+                        </ol>
+                    </div>
+
+                    <h3>2. Automatic Unwrapping</h3>
+                    <p>For simple objects or quick prototyping, automatic methods can save time:</p>
+                    <ul>
+                        <li><strong>Smart UV Project:</strong> Automatically creates seams based on angle threshold</li>
+                        <li><strong>Lightmap Pack:</strong> Optimizes for even texel density, good for lightmaps</li>
+                        <li><strong>Follow Active Quads:</strong> Useful for grid-based surfaces</li>
+                    </ul>
+
+                    <h3>3. Projection-Based Unwrapping</h3>
+                    <p>For specific shapes, projection unwrapping can be efficient:</p>
+                    <ul>
+                        <li><strong>Cube Projection:</strong> Ideal for box-like objects</li>
+                        <li><strong>Cylinder Projection:</strong> Perfect for pipes, columns, and limbs</li>
+                        <li><strong>Sphere Projection:</strong> Works well for spherical objects</li>
+                    </ul>
+
+                    <div class="note">
+                        <h4>Pro Tip</h4>
+                        <p>For complex models, use a combination of unwrapping techniques. For example, use cylinder projection for limbs and seam-based unwrapping for the torso of a character.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 id="optimizing-uvs">Optimizing UV Layouts</h2>
+                    <p>Creating an efficient UV layout is crucial for game assets. Here's how to optimize your UVs:</p>
+
+                    <h3>Texel Density</h3>
+                    <p>Texel density refers to how many texture pixels (texels) cover a given area of your 3D model. Consistent texel density ensures that your texture has uniform detail across the model.</p>
+
+                    <img src="/api/placeholder/800/400" alt="Texel Density" class="tutorial-image">
+
+                    <h3>Packing Efficiency</h3>
+                    <p>Maximize the use of your UV space by following these principles:</p>
+                    <ul>
+                        <li>Scale UV islands based on their importance and visibility</li>
+                        <li>Rotate islands to fit them more efficiently</li>
+                        <li>Keep a small margin between islands to prevent texture bleeding</li>
+                        <li>Use mirroring for symmetrical models to save texture space</li>
+                    </ul>
+
+                    <h3>UV Layout Organization</h3>
+                    <p>Organize your UV layout to make texturing easier:</p>
+                    <ul>
+                        <li>Group related parts together</li>
+                        <li>Align similar features for easier texture painting</li>
+                        <li>Keep UV islands within the 0-1 UV space for standard texture mapping</li>
+                    </ul>
+                </div>
+
+                <div class="resource-links">
+                    <h3>Additional Resources</h3>
+                    <ul>
+                        <li><a href="/resources/uv-mapping-cheatsheet.pdf">UV Mapping Cheat Sheet (PDF Download)</a></li>
+                        <li><a href="/resources/uv-grid-test-texture.png">UV Grid Test Texture</a></li>
+                        <li><a href="/tutorials/common-uv-problems.html">Common UV Mapping Problems & Solutions</a></li>
+                        <li><a href="/tutorials/advanced-udim-workflow.html">Advanced Tutorial: UDIM Workflow for High-Resolution Assets</a></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 id="practical-exercise">Practical Exercise</h2>
+                    <p>Now let's put theory into practice with a simple exercise:</p>
+
+                    <div class="steps">
+                        <h3>Exercise: Unwrap a Simple Game Prop</h3>
+                        <ol>
+                            <li>Create or download a simple prop model (a wooden crate works well)</li>
+                            <li>Mark appropriate seams</li>
+                            <li>Unwrap the model using the techniques learned</li>
+                            <li>Optimize the UV layout for efficient texture usage</li>
+                            <li>Apply a test grid texture to verify your unwrap quality</li>
+                        </ol>
+                    </div>
+
+                    <img src="/api/placeholder/800/400" alt="Exercise Example" class="tutorial-image">
+
+                    <p>Compare your results with the reference image above. Look for:</p>
+                    <ul>
+                        <li>Even texel density across the model</li>
+                        <li>Minimal stretching in the test grid</li>
+                        <li>Efficient use of UV space</li>
+                        <li>Logical organization of UV islands</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>Mastering UV mapping is a fundamental skill that will greatly improve the quality of your 3D assets. Remember that good UV maps:</p>
+                    <ul>
+                        <li>Minimize texture distortion</li>
+                        <li>Make efficient use of texture space</li>
+                        <li>Follow logical seam placement</li>
+                        <li>Maintain consistent texel density</li>
+                    </ul>
+
+                    <p>With practice, you'll develop an intuition for creating optimal UV layouts quickly. Keep experimenting with different techniques and approaches to find what works best for your specific modeling needs.</p>
+                </div>
+
+                <div class="next-prev">
+                    <a href="/tutorials/modeling-fundamentals.html" class="prev-next-link">← Previous: Modeling Fundamentals</a>
+                    <a href="/tutorials/texturing-basics.html" class="prev-next-link">Next: Texturing Basics →</a>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <h3 class="sidebar-title">In This Tutorial</h3>
+                <ul class="toc">
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#what-are-uvs">What Are UVs?</a></li>
+                    <li><a href="#preparing-your-model">Preparing Your Model</a>
+                        <ul class="toc-sub">
+                            <li><a href="#marking-seams">Marking Seams</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#unwrapping-techniques">Unwrapping Techniques</a></li>
+                    <li><a href="#optimizing-uvs">Optimizing UV Layouts</a></li>
+                    <li><a href="#practical-exercise">Practical Exercise</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+
+                <h3 class="sidebar-title" style="margin-top: 2rem;">Related Tutorials</h3>
+                <ul class="toc">
+                    <li><a href="/tutorials/texturing-fundamentals.html">Texturing Fundamentals</a></li>
+                    <li><a href="/tutorials/normal-map-creation.html">Normal Map Creation</a></li>
+                    <li><a href="/tutorials/uv-layouts-for-characters.html">UV Layouts for Characters</a></li>
+                    <li><a href="/tutorials/texture-baking-workflow.html">Texture Baking Workflow</a></li>
+                </ul>
+
+                <h3 class="sidebar-title" style="margin-top: 2rem;">Skill Level</h3>
+                <ul class="toc">
+                    <li><a href="/tutorials/tutorials-index.html#beginner">Beginner Tutorials</a></li>
+                    <li><a href="/tutorials/tutorials-index.html#intermediate" class="active">Intermediate Tutorials</a></li>
+                    <li><a href="/tutorials/tutorials-index.html#advanced">Advanced Tutorials</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/tutorials/tutorials-index.html">Tutorials</a>
+                <a href="/podcast/podcast-index.html">Podcast</a>
+                <a href="/resources/resources-index.html">Resources</a>
+                <a href="/about/">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2025 Astrigot 3D. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
