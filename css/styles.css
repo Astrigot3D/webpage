@@ -1875,3 +1875,89 @@ h1::after {
         margin-bottom: 10px;
     }
 }
+.main-content ul,
+.main-content ol,
+.section ul,
+.section ol,
+/* Add any other general content containers where lists might appear */
+.list-content ul, 
+.list-content ol,
+.path-content ul,
+.path-content ol,
+.episode-content ul,
+.episode-content ol,
+.featured-content ul,
+.featured-content ol,
+.related-content ul,
+.related-content ol,
+.software-card ul,
+.software-card ol
+ {
+    padding-left: 2rem; /* Adjust this value (e.g., 1.5rem, 2.5rem, 40px) to your preference */
+    margin-bottom: 1rem; /* Optional: Adds space after a list */
+}
+
+/* Indent sub-lists further */
+.main-content ul ul,
+.main-content ul ol,
+.main-content ol ul,
+.main-content ol ol,
+.section ul ul,
+.section ul ol,
+.section ol ul,
+.section ol ol,
+.list-content ul ul,
+.list-content ul ol,
+.list-content ol ul,
+.list-content ol ol,
+.path-content ul ul,
+.path-content ul ol,
+.path-content ol ul,
+.path-content ol ol,
+.episode-content ul ul,
+.episode-content ul ol,
+.episode-content ol ul,
+.episode-content ol ol,
+.featured-content ul ul,
+.featured-content ul ol,
+.featured-content ol ul,
+.featured-content ol ol,
+.related-content ul ul,
+.related-content ul ol,
+.related-content ol ul,
+.related-content ol ol,
+.software-card ul ul,
+.software-card ul ol,
+.software-card ol ul,
+.software-card ol ol
+{
+    padding-left: 1.5rem; /* Indentation for sub-lists (relative to parent) */
+    margin-top: 0.5rem;    /* Optional: Adds space before a sub-list */
+    margin-bottom: 0.5rem; /* Optional: Adds space after a sub-list */
+}
+
+/* Add some space between list items for readability */
+.main-content li,
+.section li,
+.list-content li,
+.path-content li,
+.episode-content li,
+.featured-content li,
+.related-content li,
+.software-card li {
+    margin-bottom: 0.5rem; /* Adjust as needed */
+}
+
+/* Ensure list items in specific components don't inherit unwanted large bottom margins */
+.steps li {
+  margin-bottom: 1rem; /* Keep your specific step spacing */
+}
+.toc li {
+    margin-bottom: 0.8rem; /* Keep your specific TOC spacing */
+}
+.resource-links li {
+    margin-bottom: 0.8rem; /* Keep your specific resource link spacing */
+}
+.comparison-table li {
+    margin-bottom: 6px; /* Keep your specific table list spacing */
+}
